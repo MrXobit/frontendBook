@@ -1,7 +1,7 @@
 import axios from "axios";
 import { AuthResponse } from "../models/response/AuthResponse";
 
-export const API_URL = 'https://backendBooks.vercel.app';
+export const API_URL = 'https://backendbooks-skqz.onrender.com/';
 
 const $api = axios.create({
     withCredentials: true,
