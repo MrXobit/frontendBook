@@ -258,7 +258,7 @@ const DetailView = () => {
 
   useEffect(() => {
     if (book && book.book) {
-      const pdfUrl = `http://localhost:5000/static/books/${book.book}`;
+      const pdfUrl = `https://backendbooks-skqz.onrender.com/static/books/${book.book}`;
       extractPdfText(pdfUrl);
     } else {
       console.error('Не вдалося знайти PDF файл книги.');

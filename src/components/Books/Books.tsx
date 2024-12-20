@@ -31,9 +31,6 @@ const Books = () => {
   const getAllBooks = async () => {
     dispatch(getbooks({ userId: user._id, count: 10, offset: 0 }));
   };
-  
- 
-
 
   const handleModalLogo = (bookId: string) => {
     if (bookModal === bookId) {
@@ -55,8 +52,8 @@ const Books = () => {
   const hancleDeleteBook = async (id: string) => {
     await dispatch(deletebook(id))
     await getAllBooks();
-    setBookModal(null)
-  }
+    setBookModal(null);
+  };
 
   return (
     <div className="books-container">
@@ -64,7 +61,7 @@ const Books = () => {
         <img src={closePng} onClick={toggleModal} alt="" className="close-modal" />
         <div className="you-logo">
           <div className="you-logo-text">Ваше лого</div>
-          <img src={logo ? `http://localhost:5000/static/logo/${logo}` : userPng} alt="User Logo" />
+          <img src={logo ? `https://backendbooks-skqz.onrender.com/static/logo/${logo}` : userPng} alt="User Logo" />
         </div>
         <Link to={CHANGEUSERLOGO_ROUTE} style={{ textDecoration: 'none' }}>
           <button className="logo-changer">Змінити лого</button>
@@ -79,7 +76,7 @@ const Books = () => {
       <div className="header-line">
         <h1>Better Books</h1>
         <img
-          src={logo ? `http://localhost:5000/static/logo/${logo}` : userPng}
+          src={logo ? `https://backendbooks-skqz.onrender.com/static/logo/${logo}` : userPng}
           alt="User Logo"
           className="logo-clickable"
           onClick={toggleModal}
@@ -118,7 +115,7 @@ const Books = () => {
               </div>
               <Link key={book._id} to={`/detail/${book._id}`} className="book-link">
                 <img
-                  src={`http://localhost:5000/static/logobooks/${book.image}`}
+                  src={`https://backendbooks-skqz.onrender.com/static/logobooks/${book.image}`}
                   alt={book.title}
                   className="book-cover"
                 />
